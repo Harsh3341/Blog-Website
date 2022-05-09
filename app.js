@@ -12,11 +12,19 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/",function(req,res){
-  res.render("home",{Content_1: homeStartingContent});
+app.get("/", function (req, res) {
+  res.render("home", { Content_1: homeStartingContent });
+});
+
+app.get("/about", function (req, res) {
+  res.render("about", { Content_2: aboutContent });
+});
+
+app.get("/contact", function (req, res) {
+  res.render("contact", { Content_3: contactContent });
 });
 
 
@@ -30,7 +38,6 @@ app.get("/",function(req,res){
 
 
 
-
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
