@@ -12,7 +12,8 @@
             <%= post.Title %>
         </h1>
         <p>
-            <%= post.Body %>
+            <%= post.Body.substring(0,100) + "..." %>
+                <a href="/posts/<%= post.Title %>">Read More</a>
         </p>
         <% }) %>
 
